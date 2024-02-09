@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctx01bftt1j8o"]
+
+[ext_resource type="Script" path="res://Scripts/OutputTextureRect.cs" id="1_4tthf"]
+[ext_resource type="Texture2D" uid="uid://cljuim2m2c0lc" path="res://icon.svg" id="2_8j5xi"]
+[ext_resource type="Texture2D" uid="uid://ddyt88l2bcaps" path="res://Assets/xmark-circle.svg" id="3_p7vyn"]
+[ext_resource type="Texture2D" uid="uid://b0twunatjr1s" path="res://Assets/xmark-circle-solid.svg" id="4_srrsb"]
+
+[node name="OutputTextureRect" type="Control" node_paths=PackedStringArray("_imageTextureRect", "_imageCanvasLayer", "_imageDisplay", "_deleteButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_4tthf")
+_imageTextureRect = NodePath("VBoxContainer/ImageTextureRect")
+_imageCanvasLayer = NodePath("ImageCanvasLayer")
+_imageDisplay = NodePath("ImageCanvasLayer/ImageDisplay")
+_deleteButton = NodePath("VBoxContainer/DeleteButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="DeleteButton" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("3_p7vyn")
+texture_pressed = ExtResource("4_srrsb")
+texture_hover = ExtResource("4_srrsb")
+stretch_mode = 5
+
+[node name="ImageTextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_8j5xi")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="ImageCanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="ImageCanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.682353)
+
+[node name="ImageDisplay" type="TextureRect" parent="ImageCanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_8j5xi")
+expand_mode = 3
+stretch_mode = 5
+
+[connection signal="toggled" from="VBoxContainer/DeleteButton" to="." method="OnDeleteButtonToggled"]
+[connection signal="gui_input" from="VBoxContainer/ImageTextureRect" to="." method="OnImageTextureRectGuiInput"]
+[connection signal="gui_input" from="ImageCanvasLayer/ColorRect" to="." method="OnColorRectGuiInput"]

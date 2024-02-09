@@ -1,0 +1,127 @@
+[gd_scene load_steps=9 format=3 uid="uid://30vsopchq78o"]
+
+[ext_resource type="Theme" uid="uid://uxv4rhrgch6j" path="res://Themes/Theme.tres" id="1_fmdxh"]
+[ext_resource type="Script" path="res://Scripts/App.cs" id="1_sr7i0"]
+[ext_resource type="PackedScene" uid="uid://ctx01bftt1j8o" path="res://Scenes/OutputTextureRect.tscn" id="2_i1nnq"]
+[ext_resource type="PackedScene" uid="uid://cd0foj5mkqfok" path="res://Scenes/Setup.tscn" id="2_n6y17"]
+[ext_resource type="Texture2D" uid="uid://dlxm64ivywn0c" path="res://Assets/download.svg" id="4_msm4n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgx85"]
+bg_color = Color(0.772549, 0.772549, 0.772549, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d0ue0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oaaga"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="App" type="Control" node_paths=PackedStringArray("_setup", "_gridContainer", "_loadingBar", "_imgCountLabel", "_loadingControl", "_loadingLabel", "_downloadButton", "_downloadFileDialog")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fmdxh")
+script = ExtResource("1_sr7i0")
+_setup = NodePath("VBoxContainer/Setup")
+_gridContainer = NodePath("VBoxContainer/ScrollContainer/GridContainer")
+_outputTextureRectPackedScene = ExtResource("2_i1nnq")
+_loadingBar = NodePath("VBoxContainer/Setup/LoadingControl/LoadingBar")
+_imgCountLabel = NodePath("VBoxContainer/Setup/LoadingControl/HBoxContainer/ImgCountLabel")
+_loadingControl = NodePath("VBoxContainer/Setup/LoadingControl")
+_loadingLabel = NodePath("VBoxContainer/Setup/LoadingControl/HBoxContainer/LoadingLabel")
+_downloadButton = NodePath("VBoxContainer/Setup/LoadingControl/HBoxContainer/DownloadButton")
+_downloadFileDialog = NodePath("DownloadFileDialog")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wgx85")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Setup" parent="VBoxContainer" instance=ExtResource("2_n6y17")]
+layout_mode = 2
+
+[node name="LoadingControl" type="Control" parent="VBoxContainer/Setup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoadingBar" type="ProgressBar" parent="VBoxContainer/Setup/LoadingControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxEmpty_d0ue0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_oaaga")
+show_percentage = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Setup/LoadingControl"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LoadingLabel" type="Label" parent="VBoxContainer/Setup/LoadingControl/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "loading..."
+
+[node name="ImgCountLabel" type="Label" parent="VBoxContainer/Setup/LoadingControl/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0/355"
+horizontal_alignment = 2
+
+[node name="DownloadButton" type="TextureButton" parent="VBoxContainer/Setup/LoadingControl/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_msm4n")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 5
+
+[node name="DownloadFileDialog" type="FileDialog" parent="."]
+title = "Open a Directory"
+ok_button_text = "Select Current Folder"
+file_mode = 2
+access = 2
+use_native_dialog = true
+
+[connection signal="pressed" from="VBoxContainer/Setup/LoadingControl/HBoxContainer/DownloadButton" to="." method="OnDownloadButtonPressed"]
+[connection signal="dir_selected" from="DownloadFileDialog" to="." method="OnDownloadFileDialogueFolderSelected"]

@@ -1,0 +1,158 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd0foj5mkqfok"]
+
+[ext_resource type="Theme" uid="uid://uxv4rhrgch6j" path="res://Themes/Theme.tres" id="1_m0ab3"]
+[ext_resource type="Script" path="res://Scripts/Setup.cs" id="1_pluqw"]
+[ext_resource type="StyleBox" uid="uid://bjewgmh3hv7pa" path="res://Themes/GreyButtonStyleBox.tres" id="3_gp0hm"]
+[ext_resource type="StyleBox" uid="uid://euum2a33g2ba" path="res://Themes/GreyButtonStyleBox_Hovered.tres" id="4_eaf3r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w37ph"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfn6o"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.745098, 0.745098, 0.745098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Setup" type="Control" node_paths=PackedStringArray("_vidFileDialog", "_vidFileButton", "_runButton", "_disableControl", "_intervalOptionButton", "_vidFileErrorLabel")]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_m0ab3")
+script = ExtResource("1_pluqw")
+_vidFileDialog = NodePath("VidFileDialog")
+_vidFileButton = NodePath("VBoxContainer/VidFileButton")
+_runButton = NodePath("VBoxContainer/RunButton")
+_disableControl = NodePath("CanvasLayer/DisableControl")
+_intervalOptionButton = NodePath("VBoxContainer/IntervalOptionButton")
+_vidFileErrorLabel = NodePath("VBoxContainer/VidFileErrorLabel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VidFileLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "select video file"
+horizontal_alignment = 1
+
+[node name="VidFileButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = ExtResource("3_gp0hm")
+theme_override_styles/hover = ExtResource("4_eaf3r")
+theme_override_styles/pressed = ExtResource("4_eaf3r")
+theme_override_styles/disabled = ExtResource("3_gp0hm")
+theme_override_styles/focus = ExtResource("3_gp0hm")
+text = "--"
+
+[node name="VidFileErrorLabel" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.988235, 0, 0, 1)
+text = "*please select a video file!!!"
+horizontal_alignment = 1
+
+[node name="IntervalOptionLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.152941, 0.152941, 0.152941, 1)
+text = "timer interval"
+horizontal_alignment = 1
+
+[node name="IntervalOptionButton" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme_override_constants/h_separation = 0
+theme_override_styles/focus = ExtResource("3_gp0hm")
+theme_override_styles/normal = ExtResource("3_gp0hm")
+theme_override_styles/hover = ExtResource("4_eaf3r")
+theme_override_styles/pressed = ExtResource("3_gp0hm")
+theme_override_styles/disabled = ExtResource("3_gp0hm")
+theme_override_styles/normal_mirrored = ExtResource("3_gp0hm")
+theme_override_styles/hover_mirrored = ExtResource("4_eaf3r")
+theme_override_styles/pressed_mirrored = ExtResource("3_gp0hm")
+theme_override_styles/disabled_mirrored = ExtResource("3_gp0hm")
+item_count = 5
+selected = 3
+popup/item_0/text = "1s"
+popup/item_0/id = 1
+popup/item_1/text = "2s"
+popup/item_1/id = 2
+popup/item_2/text = "3s"
+popup/item_2/id = 3
+popup/item_3/text = "5s"
+popup/item_3/id = 5
+popup/item_4/text = "10s"
+popup/item_4/id = 10
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="RunButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_w37ph")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kfn6o")
+text = "Run!"
+
+[node name="VidFileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+use_native_dialog = true
+
+[node name="FFFolderDialog" type="FileDialog" parent="."]
+title = "Open a Directory"
+size = Vector2i(454, 159)
+ok_button_text = "Select Current Folder"
+file_mode = 2
+access = 2
+use_native_dialog = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="DisableControl" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+mouse_default_cursor_shape = 5
+
+[connection signal="pressed" from="VBoxContainer/VidFileButton" to="." method="OnVidFileButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/RunButton" to="." method="OnRunButtonPressed"]
+[connection signal="file_selected" from="VidFileDialog" to="." method="OnVidFileDialogFileSelected"]
+[connection signal="dir_selected" from="FFFolderDialog" to="." method="OnFFFolderDialogFolderSelected"]

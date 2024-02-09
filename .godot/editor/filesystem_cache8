@@ -1,0 +1,30 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1707492021
+export_presets.cfg::TextFile::-1::1707230331::0::1::::<><>::
+icon.svg::CompressedTexture2D::5564727345968999772::1707224571::1707224578::1::::<><>::
+::res://Assets/::1707492102
+download.svg::CompressedTexture2D::7979605519487969624::1707251289::1707251300::1::::<><>::
+MainWidgetButton_ToggleOff.png::CompressedTexture2D::9019634015550848765::1706442746::1707248976::1::::<><>::
+MainWidgetButton_ToggleOn.png::CompressedTexture2D::3375464260291166143::1706442818::1707248976::1::::<><>::
+screenshot.svg::CompressedTexture2D::5180991221605437847::1707492084::1707492103::1::::<><>::
+xmark-circle-solid.svg::CompressedTexture2D::122992268393222274::1707251861::1707251871::1::::<><>::
+xmark-circle.svg::CompressedTexture2D::7420587953643834576::1707251859::1707251871::1::::<><>::
+::res://Exports/::1707229988
+::res://Exports/test0.1/::1707230338
+::res://Exports/test0.1/data_Video Screenshots Tool_windows_x86_64/::1707230338
+Video Screenshots Tool.deps.json::JSON::-1::1707230338::0::1::::<><>::
+Video Screenshots Tool.runtimeconfig.json::JSON::-1::1707230338::0::1::::<><>::
+::res://Scenes/::1707491729
+App.tscn::PackedScene::2018205025454645472::1707491729::0::1::::<><>::uid://uxv4rhrgch6j::::res://Themes/Theme.tres<>res://Scripts/App.cs<>uid://ctx01bftt1j8o::::res://Scenes/OutputTextureRect.tscn<>uid://cd0foj5mkqfok::::res://Scenes/Setup.tscn<>uid://dlxm64ivywn0c::::res://Assets/download.svg
+OutputTextureRect.tscn::PackedScene::6155474501449950260::1707491729::0::1::::<><>::res://Scripts/OutputTextureRect.cs<>uid://cljuim2m2c0lc::::res://icon.svg<>uid://ddyt88l2bcaps::::res://Assets/xmark-circle.svg<>uid://b0twunatjr1s::::res://Assets/xmark-circle-solid.svg
+Setup.tscn::PackedScene::5035346447843801882::1707491729::0::1::::<><>::uid://uxv4rhrgch6j::::res://Themes/Theme.tres<>res://Scripts/Setup.cs<>uid://bjewgmh3hv7pa::::res://Themes/GreyButtonStyleBox.tres<>uid://euum2a33g2ba::::res://Themes/GreyButtonStyleBox_Hovered.tres
+::res://Scripts/::1707491715
+App.cs::CSharpScript::-1::1707485045::0::1::::<>Control<>::
+Global.cs::CSharpScript::-1::1707258137::0::1::::<>Node<>::
+OutputTextureRect.cs::CSharpScript::-1::1707432856::0::1::::<>Control<>::
+Setup.cs::CSharpScript::-1::1707491715::0::1::::<>Control<>::
+::res://Themes/::1707480089
+GreyButtonStyleBox.tres::StyleBoxFlat::3027724918432164950::1707480089::0::1::::<><>::
+GreyButtonStyleBox_Hovered.tres::StyleBoxFlat::323280118455843326::1707439895::0::1::::<><>::
+Theme.tres::Theme::1452585310466451603::1707480089::0::1::::<><>::
+::res://Videos/::1707245331

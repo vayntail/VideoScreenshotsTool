@@ -1,0 +1,9 @@
+res://Scenes/App.tscn
+res://Themes/Theme.tres
+res://Scripts/App.cs
+res://Themes/GreyButtonStyleBox.tres
+res://Scenes/Setup.tscn
+res://Scenes/OutputTextureRect.tscn
+res://Scripts/Global.cs
+res://Scripts/OutputTextureRect.cs
+res://Scripts/Setup.cs

@@ -1,0 +1,25 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Video Screenshots Tool"
+config/version="v0.0.1"
+run/main_scene="res://Scenes/App.tscn"
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+config/icon="res://Assets/screenshot.svg"
+
+[autoload]
+
+Global="*res://Scripts/Global.cs"
+
+[dotnet]
+
+project/assembly_name="Video Screenshots Tool"

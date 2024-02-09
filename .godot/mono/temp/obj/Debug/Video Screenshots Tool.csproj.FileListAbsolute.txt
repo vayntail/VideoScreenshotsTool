@@ -1,0 +1,22 @@
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\bin\Debug\Video Screenshots Tool.deps.json
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\bin\Debug\Video Screenshots Tool.runtimeconfig.json
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\bin\Debug\Video Screenshots Tool.dll
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\bin\Debug\Video Screenshots Tool.pdb
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\obj\Debug\Video Screenshots Tool.csproj.AssemblyReference.cache
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\obj\Debug\Video Screenshots Tool.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\obj\Debug\Video Screenshots Tool.AssemblyInfoInputs.cache
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\obj\Debug\Video Screenshots Tool.AssemblyInfo.cs
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\obj\Debug\Video Screenshots Tool.csproj.CoreCompileInputs.cache
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\obj\Debug\Video Screenshots Tool.csproj.CopyComplete
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\obj\Debug\Video Screenshots Tool.dll
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\obj\Debug\refint\Video Screenshots Tool.dll
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\obj\Debug\Video Screenshots Tool.pdb
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\obj\Debug\Video Screenshots Tool.genruntimeconfig.cache
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\obj\Debug\ref\Video Screenshots Tool.dll
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\bin\Debug\FFMpegCore.dll
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\bin\Debug\Instances.dll
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\bin\Debug\System.Text.Json.dll
+C:\Users\jeony\Coding\AppDev\VideoScreenshotsTool\.godot\mono\temp\bin\Debug\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
